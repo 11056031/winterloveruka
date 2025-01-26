@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruka照片上傳</title>
+    <link rel="stylesheet" href="/static/css/rukas1.css">
+</head>
+<body>
+    <div class="container">
+        <form action="/rukapic/step1" method="POST" enctype="multipart/form-data">
+            <h1>上傳圖片</h1>
+            <input type="file" name="uploaded_image" id="imageInput" accept="image/*" required>
+            <button type="submit" class="button">確認上傳</button>
+        </form>
+        <a href="/" class="button">回首頁</a>
+    </div>
+</body>
+</html>
