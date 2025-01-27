@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruka照片生成結果</title>
+    <link rel="stylesheet" href="/static/css/rukas2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>生成結果</h1>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% elif generated_image_path %}
+            <div id="resultContainer">
+                <img src="{{ generated_image_path }}" alt="生成的圖片">
+                <a href="{{ generated_image_path }}" download class="button">下載生成圖片</a>
+            </div>
+        {% else %}
+            <p>未找到生成圖片，請返回上一步。</p>
+        {% endif %}
+        <a href="/rukapic/step3" class="button">返回上一步</a>
+        <a href="/" class="button">首頁</a>
+    </div>
+</body>
+</html>

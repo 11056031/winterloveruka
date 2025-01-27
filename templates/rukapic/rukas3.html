@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>照片上傳</title>
+    <link rel="stylesheet" href="/static/css/rukas2.css">
+</head>
+<body>
+    <form action="/rukapic/step3" method="POST" enctype="multipart/form-data">
+        <h1>上傳圖片並輸入描述</h1>
+        <input type="file" name="uploaded_image" id="imageInput" accept="image/*" required>
+        <label for="prompt">描述內容（選填）：</label>
+        <input type="text" name="prompt" id="prompt" placeholder="輸入關鍵字描述（例：castle, dragon）">
+        <button type="submit" class="button">生成圖片</button>
+    </form> 
+    <a href="/rukapic/step2" class="button">返回上一步</a>
+    <a href="/" class="button">首頁</a>   
+</body>
+</html>
