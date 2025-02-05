@@ -19,11 +19,11 @@ logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %
 ruakpic_bp = Blueprint('ruakpic_bp', __name__)
 
 # 設定快取路徑
-HF_CACHE_DIR = r"E:\暫時\huggingface_cache"
+HF_CACHE_DIR = r"D:\暫時\huggingface_cache"
 os.environ["HF_HOME"] = HF_CACHE_DIR
 
 # 臨時檔案夾路徑
-TEMP_PATH = os.path.join(r"D:\work\test\winterloveruka\static", "temp")
+TEMP_PATH = os.path.join(r"C:\Users\berry\Desktop\test\winterloveruka\static", "temp")
 os.makedirs(TEMP_PATH, exist_ok=True)
 
 # 加載分割模型
