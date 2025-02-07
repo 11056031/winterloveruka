@@ -155,7 +155,12 @@ def ruakpic_step5():
             raise RuntimeError("未檢測到 NVIDIA GPU，請確保有可用的 GPU 並安裝正確的驅動程序。")
 
         # 使用用戶輸入的 prompt 生成圖像
-        images = pipe(prompt, image=init_image).images
+        images = pipe(
+            prompt=prompt,               # 使用用戶輸入的文字提示
+            image=init_image,            # 初始圖像
+            strength=0.75,               # 控制初始圖像對生成圖像的影響強度
+            guidance_scale=8.0           # 控制生成圖像對文字提示的依賴程度
+        ).images
 
         # 保存生成的圖像
         generated_filename = f"generated_{uuid.uuid4().hex}.png"
