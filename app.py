@@ -5,9 +5,10 @@ from flask import Flask, render_template
 import logging
 
 # -----------------------
-# 匯入客戶藍圖
+# 匯入藍圖
 # -----------------------
 from services.rukapic import ruakpic_bp
+from services.rukatalk import rukatalk_bp
 
 # -----------------------
 # 配置日志
@@ -21,9 +22,10 @@ app = Flask(__name__)
 app.secret_key = 'ruka_jason_2002032020060203'  # 替換為隨機生成的安全密鑰
 
 # -----------------------
-# 註冊客戶服務
+# 註冊服務
 # -----------------------
 app.register_blueprint(ruakpic_bp, url_prefix='/rukapic')
+app.register_blueprint(rukatalk_bp, url_prefix='/rukatalk')
 
 # -----------------------
 # 在網站中定義路由
